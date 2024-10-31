@@ -1,0 +1,70 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import { Icon } from '@astrojs/starlight/components';
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import { getSubjectMatterLink } from '../lib/subjects';
+
+const { data } = Astro.props.entry;
+const { subjectMatter } = data;
+---
+
+{
+	subjectMatter !== undefined ? (
+		<div class="wrapper">
+			<h1 id="_top">
+				<>
+					<span>{data.title}</span>
+				</>
+			</h1>
+			<div class="metadata">
+				<a href={getSubjectMatterLink(subjectMatter).packageRootAtRef}>
+					<Icon size="1rem" name="github" /> GitHub
+				</a>
+			</div>
+		</div>
+	) : (
+		<Default {...Astro.props}>
+			<slot />
+		</Default>
+	)
+}
+
+<style>
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	h1 {
+		display: flex;
+		flex-wrap: wrap;
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-h1);
+		font-weight: 600;
+		line-height: var(--sl-line-height-headings);
+	}
+	.scope {
+		color: var(--sl-color-text);
+		font-weight: 400;
+	}
+	.metadata {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 1rem;
+		font-size: var(--sl-text-xs);
+	}
+	.metadata a {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		text-decoration: none;
+		color: var(--sl-color-text-accent);
+	}
+	.metadata a:hover {
+		color: var(--sl-color-white);
+	}
+	.metadata svg {
+		width: 1.5rem;
+	}
+</style>

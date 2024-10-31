@@ -1,20 +1,30 @@
 {
-  "name": "nomicon",
-  "type": "module",
+  "name": "astronomicon",
   "version": "0.0.1",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "astro": "astro",
     "build": "astro check && astro build",
+    "dev": "astro dev",
+    "format": "prettier -w \"**/*\" --ignore-unknown --cache",
     "preview": "astro preview",
-    "astro": "astro"
+    "start": "astro dev"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,astro,json,md,mdx}": "prettier --write"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/starlight": "^0.28.4",
     "astro": "^4.15.3",
     "sharp": "^0.32.5",
-    "@astrojs/check": "^0.9.4",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }
