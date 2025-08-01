@@ -7,16 +7,25 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Astronomicon',
-			social: {
-				github: 'https://github.com/Fryuni/astronomicon',
-			},
+			social: [
+				{
+					icon: 'github',
+					label: 'GitHub',
+					href: 'https://github.com/Fryuni/astronomicon',
+				},
+			],
 			components: {
 				PageTitle: './src/components/PageTitle.astro',
 			},
+			lastUpdated: true,
 			sidebar: [
 				{
 					label: 'Introduction',
-					slug: 'index'
+					slug: 'index',
+				},
+				{
+					label: 'Tome I: When and Where',
+					autogenerate: { directory: 'tome-1' },
 				},
 				{
 					label: 'All',

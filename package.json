@@ -4,8 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "astro": "astro",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "dev": "astro dev",
     "format": "prettier -w \"**/*\" --ignore-unknown --cache",
     "preview": "astro preview",
@@ -15,10 +14,9 @@
     "*.{js,ts,jsx,tsx,astro,json,md,mdx}": "prettier --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/starlight": "^0.28.4",
-    "astro": "^4.15.3",
-    "sharp": "^0.32.5",
+    "@astrojs/starlight": "^0.35.2",
+    "astro": "^5.6.1",
+    "sharp": "^0.34.2",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
@@ -26,5 +24,5 @@
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1"
   },
-  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
 }

@@ -4,7 +4,7 @@ import { Icon } from '@astrojs/starlight/components';
 import Default from '@astrojs/starlight/components/PageTitle.astro';
 import { getSubjectMatterLink } from '../lib/subjects';
 
-const { data } = Astro.props.entry;
+const { data } = Astro.locals.starlightRoute.entry;
 const { subjectMatter } = data;
 ---
 
