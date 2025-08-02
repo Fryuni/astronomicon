@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkEmoji from 'remark-emoji';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,11 +28,10 @@ export default defineConfig({
 					label: 'Tome I: When and Where',
 					autogenerate: { directory: 'tome-1' },
 				},
-				{
-					label: 'All',
-					autogenerate: { directory: 'all' },
-				},
 			],
 		}),
 	],
+	markdown: {
+		remarkPlugins: [[remarkEmoji, { accessible: true }]],
+	},
 });
