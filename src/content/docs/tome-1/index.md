@@ -1,5 +1,7 @@
 ---
 title: Overview
+sidebar:
+  order: 0
 ---
 
 In the path to most unlock advanced patterns in Astro projects and integration, the single most important concept to master is understanding **when** and **where** your code executes. Code in an Astro project runs in three distinct environments, and the boundaries between them are not always as clear as they seem.
